@@ -1,4 +1,4 @@
-// "use-cl"
+"use client"
 import React from 'react'
 import UserPage from "@/app/users/page"
 

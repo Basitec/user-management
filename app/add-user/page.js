@@ -42,7 +42,7 @@ const page = () => {
           console.log(values);
           
           const newUser = {
-            id: Date.now(),
+            id: 13,
             first_name: values.firstname,
             last_name: values.lastname,
             email: values.email,

@@ -15,7 +15,11 @@ import React, { Suspense } from 'react'
 import { Provider } from "react-redux";
 import store from '@/store/index'
 import Head from "next/head";
+import { useEffect } from "react";
 const layout = ({children}) => {
+  useEffect(() => {
+    document.title = "User Management Application";
+  }, []);
   return (
     <html lang="en">
       <Head>

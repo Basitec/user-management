@@ -7,7 +7,7 @@ const pagination = ({totalPages,currentPage,onPageChange}) => {
   return (
     <div >
         <div 
-        className={'link text-center bg-[rgba(255,255,255,0.28)]  flex w-1/5 mx-auto  backdrop-blur-md  justify-center gap-5 py-2 my-2'}
+        className={'link text-center bg-[rgba(255,255,255,0.28)]  flex w-1/5 mx-auto  backdrop-blur-md  justify-center gap-5 py-2 my-2 max-sm:w-[30%]'}
         >
           {
             [...Array(totalPages)].map((_,index)=>{

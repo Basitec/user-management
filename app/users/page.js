@@ -101,7 +101,7 @@ const page = () => {
         {
           loading === false ?
         <tfoot>
-          <tr><td colSpan={"5"} className=' p-[10px]'><button className=' bg-[#1de01d] text-white px-8 py-4 rounded-full hover:bg-[#2fe82f] transition duration-100' onClick={()=>{router.push("/add-user")}}
+          <tr><td colSpan={"5"} className=' p-[10px]'><button className=' bg-[#1de01d] text-white px-8 py-4 rounded-full hover:bg-[#2fe82f] transition duration-100 max-sm:py-2' onClick={()=>{router.push("/add-user")}}
           > <span className=' font-black'>+</span> Add new user </button></td></tr>
         </tfoot>:""
         }

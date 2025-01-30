@@ -72,13 +72,10 @@ const page = () => {
     })
   return (
     <>
-    <Head>
-      <title>Add new User</title>
-    </Head>
     <section 
     className='bg-[#00000095] w-[100%] h-[100vh] bg-[url("/bgImage3.jpg")] bg-center bg-cover bg-no-repeat bg-blend-darken mx-auto p-8 flex flex-col gap-6 justify-center items-center'
     >
-      <div className="wrapper w-[50%] bg-[rgba(0,0,0,0.28)] flex flex-col items-center p-4 gap-2 rounded backdrop-blur-md max-sm:w-[90%]">
+      <div className="wrapper w-[50%] bg-[rgba(0,0,0,0.28)] flex flex-col items-center p-4 gap-2 rounded backdrop-blur-md max-sm:w-[95%]">
       <h1 className=' text-center text-[#fff] font-bold text-xl '>Sign Up  to be part of our users</h1>
       {successMessage &&<> <div className='text-white'>{successMessage}</div> <div role="status" className='flex items-center'>
               <svg aria-hidden="true" className="w-4 h-4 text-gray-200 animate-spin dark:text-gray-600 fill-[#fff]" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">

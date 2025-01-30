@@ -44,16 +44,17 @@ const page = () => {
   return (
     <>
     <section className='py-2'>
-    <div className='wrapper w-[80%] bg-[rgba(0,0,0,0.28)] flex flex-col items-center mx-auto p-4 gap-2 rounded-lg backdrop-blur-md text-white'>
+    <div className='wrapper w-[80%] bg-[rgba(0,0,0,0.28)] flex flex-col items-center mx-auto p-4 gap-2 rounded-lg backdrop-blur-md text-white max-sm:w-[90%]'>
       <h1 className=' text-center font-black'> List of all the present users</h1>
-      <table className='users w-[100%] mx-auto ' cellPadding={'20'} cellSpacing={"10"}>
-        <thead>
-          <tr>
-            <th>S/n</th>
-            <th>Avatar</th>
-            <th>Fullname</th>
-            <th>Email</th>
-            <th> Take Action</th>
+      <table className='users w-[100%] mx-auto  border-collapse border-spacing-[20px] max-sm:border-spacing-0  max-sm:w-[100%]' >
+      {/* cellPadding={'20'} cellSpacing={"10"} */}
+        <thead className=''>
+          <tr className='max-sm:py-4'>
+            <th className=' p-[10px] max-sm:p-2'>S/n</th>
+            <th className=' p-[10px] max-sm:p-2'>Avatar</th>
+            <th className=' p-[10px] max-sm:p-2'>Fullname</th>
+            <th className=' p-[10px] max-sm:p-2 hidden md:table-cell'>Email</th>
+            <th className=' p-[10px] max-sm:p-2 hidden md:table-cell'> Take Action</th>
           </tr>
         </thead>
         <tbody>
@@ -69,18 +70,27 @@ const page = () => {
             <>
             {
               users.map((eachData,index)=>(
+                <>
                 <tr key={index}>
-                  <td>{eachData.id}</td>
-                  <td className=' flex items-center justify-center'><Image src={eachData.avatar} alt={eachData.first_name}  width={100} height={100} className=' rounded-full'/></td>
-                  <td> 
+                  <td  className=' p-[10px] max-sm:p-2'>{eachData.id}</td>
+                  <td className=' flex items-center justify-center p-[20px] max-sm:p-2'><Image src={eachData.avatar} alt={eachData.first_name}  width={100} height={100} className=' rounded-full max-sm:w-[50px]'/></td>
+                  <td  className=' p-[10px] max-sm:p-2'> 
                     <div>
                   <h1>{eachData.first_name}</h1>
                   <h1>{eachData.last_name}</h1>
                     </div></td>
-                  <td>{eachData.email}</td>
-                  <td><button className=' bg-red-600 text-white px-8 py-4 rounded-full hover:bg-red-700 transition duration-100' onClick={() => handleDelete(eachData.id)} 
+                  <td  className=' p-[10px] hidden md:table-cell'>{eachData.email}</td>
+                  <td  className=' p-[10px] hidden md:table-cell'><button className=' bg-red-600 text-white px-8 py-4 rounded-full hover:bg-red-700 transition duration-100 max-md:px-4' onClick={() => handleDelete(eachData.id)} 
                   >Delete User</button></td>
                 </tr>
+                <tr className='md:hidden border ' key={index+1}>
+                <td colSpan="3" className="border p-2 ">
+                <span className="block"><strong>Email:</strong> {eachData.email}</span>
+                <span className="block"><strong>Take Action:</strong> <button className=' bg-red-600 text-white px-8 py-4 rounded-full hover:bg-red-700 transition duration-100 max-sm:px-3 max-sm:py-1' onClick={() => handleDelete(eachData.id)} 
+                  >Delete User</button></span>
+                </td>
+                </tr>
+                </>
               ))
             }
             </>
@@ -91,11 +101,13 @@ const page = () => {
         {
           loading === false ?
         <tfoot>
-          <tr><td colSpan={"5"}><button className=' bg-[#1de01d] text-white px-8 py-4 rounded-full hover:bg-[#2fe82f] transition duration-100' onClick={()=>{router.push("/add-user")}}
+          <tr><td colSpan={"5"} className=' p-[10px]'><button className=' bg-[#1de01d] text-white px-8 py-4 rounded-full hover:bg-[#2fe82f] transition duration-100' onClick={()=>{router.push("/add-user")}}
           > <span className=' font-black'>+</span> Add new user </button></td></tr>
         </tfoot>:""
         }
       </table>
+
+
     </div>
     </section>
     <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={handleChange} />

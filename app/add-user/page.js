@@ -85,12 +85,12 @@ const page = () => {
               <span className="sr-only">Loading...</span>
           </div> </>}
         <form action="" onSubmit={formik.handleSubmit} className=' grid grid-cols-2 items-center gap-4 w-[90%]'>
-        <div className='flex flex-col gap-2  transition-all max-sm:col-start-1 max-sm:col-end-3'>
+        <div className='flex flex-col gap-2  transition-all max-sm:col-start-1 max-sm:col-end-3 max-md:col-start-1 max-md:col-end-3'>
         <label htmlFor="firstname" className=' text-lg text-[#fff]'>Firstname:</label>
         <input type="text" className="input w-[100%] p-2" name="firstname" value={formik.values.firstname} onChange={formik.handleChange} onBlur={formik.handleBlur} required />
         {formik.errors.firstname && formik.touched.firstname ? <p className='text-[#f00] '>{formik.errors.firstname}</p>: ''}
         </div>
-        <div className='flex flex-col gap-2 max-sm:col-start-1 max-sm:col-end-3'>
+        <div className='flex flex-col gap-2 max-sm:col-start-1 max-sm:col-end-3 max-md:col-start-1 max-md:col-end-3'>
         <label htmlFor="lastname" className='text-lg text-[#fff]'>Lastname</label>
         <input type="text" name="lastname"  className="input p-2 w-[100%]" value={formik.values.lastname} onChange={formik.handleChange} onBlur={formik.handleBlur} required />
         {formik.errors.lastname && formik.touched.lastname ? <p className="text-[#f00]">{formik.errors.lastname}</p>: ''}

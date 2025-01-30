@@ -71,7 +71,7 @@ const page = () => {
                 <>
                 <tr key={index}>
                   <td  className=' p-[10px] max-sm:p-2'>{eachData.id}</td>
-                  <td className=' flex items-center justify-center p-[20px] max-sm:p-2'><Image src={eachData.avatar} alt={eachData.first_name}  width={100} height={100} className=' rounded-full max-sm:w-[50px]'/></td>
+                  <td className=' flex items-center justify-center p-[20px] max-sm:p-2'><Image src={eachData.avatar} alt={eachData.first_name}  width={100} height={100} className=' rounded-full max-sm:w-[60px] max-md:w-[90px]'/></td>
                   <td  className=' p-[10px] max-sm:p-2'> 
                     <div>
                   <h1>{eachData.first_name}</h1>

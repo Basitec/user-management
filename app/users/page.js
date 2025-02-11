@@ -31,11 +31,13 @@ const page = () => {
     }
     
     getData()
-  },[currentPage,dispatch])
+  },[currentPage])
   const handleDelete = (id) => {
-    if (window.confirm("Are you sure you want to delete this user?")) {
+    useEffect(()=>{
+       if (window.confirm("Are you sure you want to delete this user?")) {
       dispatch(removeUser(id));
-    }
+    }},[])
+   
   };
   const handleChange= (page)=>{
     router.push(`/users?page=${page}`);
@@ -71,12 +73,21 @@ const page = () => {
                 <>
                 <tr key={index}>
                   <td  className=' p-[10px] max-sm:p-2'>{eachData.id}</td>
-                  <td className=' flex items-center justify-center p-[20px] max-sm:p-2'><Image src={eachData.avatar} alt={eachData.first_name}  width={100} height={100} className=' rounded-full max-sm:w-[60px] max-md:w-[90px]'/></td>
+                  <td className=' flex items-center justify-center p-[20px] max-sm:p-2'>
+                    {
+                      eachData.avatar ? (
+
+                    <Image src={eachData.avatar} alt={eachData.first_name}  width={100} height={100} className=' rounded-full max-sm:w-[60px] max-md:w-[90px]'/>
+                      ): null
+                    }
+                    {/* // <Image src={eachData.avatar} alt={eachData.first_name}  width={100} height={100} className=' rounded-full max-sm:w-[60px] max-md:w-[90px]'/> */}
+                    </td>
                   <td  className=' p-[10px] max-sm:p-2'> 
-                    <div>
+                    {/* <div> */}
                   <h1>{eachData.first_name}</h1>
-                  <h1>{eachData.last_name}</h1>
-                    </div></td>
+                  <h1>{eachData.last_name}</h1> 
+                    {/* </div> */}
+                    </td>
                   <td  className=' p-[10px] hidden md:table-cell'>{eachData.email}</td>
                   <td  className=' p-[10px] hidden md:table-cell'><button className=' bg-red-600 text-white px-8 py-4 rounded-full hover:bg-red-700 transition duration-100 max-md:px-4' onClick={() => handleDelete(eachData.id)} 
                   >Delete User</button></td>

@@ -4,6 +4,7 @@ const nextConfig = {
         images: {
           domains: ['reqres.in'], // Add the domain hosting the images
         },
+        reactStrictMode: false,
     //   };
 };
 

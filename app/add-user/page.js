@@ -53,6 +53,8 @@ const page = () => {
           dispatch(createUser(newUser));
           dispatch(fetchUsers())
           if(response.status == 201){
+            console.log(newUser);
+            
             setSuccessMessage("User created successfully! Redirecting...");
             
             setTimeout(()=>{
